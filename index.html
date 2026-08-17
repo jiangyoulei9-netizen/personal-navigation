@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f4" />
+    <title>我的导航</title>
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="我的导航首页">
+          <span class="brand-mark">M</span>
+          <span>我的导航</span>
+        </a>
+        <div class="topbar-meta">
+          <span id="bookmark-count"></span>
+          <time id="current-date"></time>
+        </div>
+      </header>
+
+      <section class="intro" id="top" aria-labelledby="page-title">
+        <p class="eyebrow">PERSONAL LINKS</p>
+        <h1 id="page-title">所有常用入口，在这里。</h1>
+        <label class="search-box" for="search-input">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="search-input" type="search" autocomplete="off" placeholder="搜索网站、关键词或域名" />
+          <kbd>⌘ K</kbd>
+        </label>
+      </section>
+
+      <nav class="filters" aria-label="链接分类" id="filter-bar"></nav>
+
+      <section class="favorites-section" id="favorites-section" hidden aria-labelledby="favorites-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">PINNED</p>
+            <h2 id="favorites-title">常用</h2>
+          </div>
+          <span class="section-count" id="favorites-count"></span>
+        </div>
+        <div class="link-grid" id="favorites-grid"></div>
+      </section>
+
+      <section class="links-area" id="links-area" aria-live="polite"></section>
+    </main>
+
+    <template id="link-card-template">
+      <article class="link-card">
+        <a class="link-card-main" target="_blank" rel="noreferrer noopener">
+          <span class="site-icon" aria-hidden="true">
+            <img loading="lazy" alt="" />
+            <span class="icon-fallback"></span>
+          </span>
+          <span class="link-copy">
+            <strong></strong>
+            <small></small>
+          </span>
+          <span class="open-arrow" aria-hidden="true">↗</span>
+        </a>
+        <button class="pin-button" type="button" aria-label="添加到常用" title="添加到常用">☆</button>
+      </article>
+    </template>
+
+    <script src="./assets/icon-map.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
